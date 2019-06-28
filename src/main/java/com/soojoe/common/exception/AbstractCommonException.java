@@ -10,16 +10,16 @@ import com.soojoe.common.constants.ResponseCodeConstants;
  * @version 1.0
  * @date 2019/04/27 21:02
  */
-public abstract class AbstactCommonException extends RuntimeException {
+public abstract class AbstractCommonException extends RuntimeException {
 
   protected int code = ResponseCodeConstants.SERVER_ERROR;
   protected int action = ResponseActionConstants.TOAST;
   protected String message;
 
-  protected AbstactCommonException() {
+  protected AbstractCommonException() {
   }
 
-  protected AbstactCommonException(String message) {
+  protected AbstractCommonException(String message) {
     super(message);
   }
 

@@ -10,7 +10,7 @@ import com.soojoe.common.constants.ResponseCodeConstants;
  * @version 1.0
  * @date 2019/04/27 21:02
  */
-public class AccessDeniedException extends AbstactCommonException {
+public class AccessDeniedException extends AbstractCommonException {
 
   public AccessDeniedException() {
     this(ResponseActionConstants.ALERT);

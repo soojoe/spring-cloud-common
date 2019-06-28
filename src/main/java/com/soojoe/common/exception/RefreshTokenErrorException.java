@@ -10,7 +10,7 @@ import com.soojoe.common.constants.ResponseCodeConstants;
  * @version 1.0
  * @date 2019/04/27 21:02
  */
-public class RefreshTokenErrorException extends AbstactCommonException {
+public class RefreshTokenErrorException extends AbstractCommonException {
 
     public RefreshTokenErrorException() {
         this(ResponseActionConstants.ALERT);

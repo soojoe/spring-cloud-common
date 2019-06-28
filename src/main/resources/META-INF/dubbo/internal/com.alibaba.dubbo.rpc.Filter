@@ -1,0 +1,2 @@
+dubboTrace=com.netease.edu100.common.util.filter.DubboTraceFilter
+dubboException=com.netease.edu100.common.util.filter.DubboExceptionFilter

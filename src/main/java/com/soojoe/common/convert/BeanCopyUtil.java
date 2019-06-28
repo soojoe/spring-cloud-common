@@ -1,12 +1,14 @@
-package com.soojoe.common.util;
+package com.soojoe.common.convert;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.cglib.beans.BeanCopier;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.collections.CollectionUtils;
-import org.springframework.cglib.beans.BeanCopier;
 
 /**
  * Bean拷贝工具
@@ -17,10 +19,13 @@ import org.springframework.cglib.beans.BeanCopier;
  * @version 1.0
  * @date 2019/04/15 14:15
  */
-@Slf4j
 public final class BeanCopyUtil {
 
-  //缓存beanCopiers
+  private static Logger log = LoggerFactory.getLogger(BeanCopyUtil.class);
+
+  /**
+   * 缓存beanCopiers
+   */
   private static final Map<String, BeanCopier> BEAN_COPIERS = new ConcurrentHashMap<>();
 
   private static String genKey(Class<?> srcClazz, Class<?> destClazz) {

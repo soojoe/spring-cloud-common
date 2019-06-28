@@ -10,7 +10,7 @@ import com.soojoe.common.constants.ResponseCodeConstants;
  * @version 1.0
  * @date 2019/04/27 21:02
  */
-public class AccessTokenErrorException extends AbstactCommonException {
+public class AccessTokenErrorException extends AbstractCommonException {
 
     public AccessTokenErrorException() {
         this(ResponseActionConstants.ALERT);

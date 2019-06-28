@@ -1,5 +1,6 @@
-package com.soojoe.common.util;
+package com.soojoe.common.pagination;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,15 +11,15 @@ import java.util.List;
  * @version 1.0
  * @date 2019/04/27 21:02
  */
-public class PaginationInfo<T> {
+public class PaginationInfo<T> implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  private static final int DEFAULT_PAGE_SIZE = 10;
-  private static final int DEFAULT_PAGE_INDEX = 1;
-  private static final int DEFAULT_TOTLE_PAGE_COUNT = 1;
-  private static final long DEFAULT_TOTLE_COUNT = 0L;
-  private static final long DEFAULT_OFFSET = 0L;
+  private static final int  DEFAULT_PAGE_SIZE        = 10;
+  private static final int  DEFAULT_PAGE_INDEX       = 1;
+  private static final int  DEFAULT_TOTAL_PAGE_COUNT = 1;
+  private static final long DEFAULT_TOTAL_COUNT      = 0L;
+  private static final long DEFAULT_OFFSET           = 0L;
 
   //页索引
   private int pageIndex = 1;
@@ -107,11 +108,11 @@ public class PaginationInfo<T> {
 
   public void setTotalCount(long totalCount) {
     if (totalCount < 0L) {
-      totalCount = DEFAULT_TOTLE_COUNT;
+      totalCount = DEFAULT_TOTAL_COUNT;
     }
 
     if (totalCount == 0L) {
-      this.totalPageCount = DEFAULT_TOTLE_PAGE_COUNT;
+      this.totalPageCount = DEFAULT_TOTAL_PAGE_COUNT;
     } else {
       this.totalPageCount = (int) ((totalCount - 1L) / (long) this.pageSize + 1L);
     }
@@ -164,10 +165,6 @@ public class PaginationInfo<T> {
 
   public int getTotalPageCount() {
     return this.totalPageCount;
-  }
-
-  public void setTotalPageCount(int totalPageCount) {
-    this.totalPageCount = totalPageCount;
   }
 
   public void setLimit(int limit) {

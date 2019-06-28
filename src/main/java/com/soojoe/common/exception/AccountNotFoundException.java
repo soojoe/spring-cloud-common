@@ -10,7 +10,7 @@ import com.soojoe.common.constants.ResponseCodeConstants;
  * @version 1.0
  * @date 2019/04/27 21:02
  */
-public class AccountNotFoundException extends AbstactCommonException {
+public class AccountNotFoundException extends AbstractCommonException {
 
     public AccountNotFoundException() {
         this(ResponseActionConstants.ALERT);
